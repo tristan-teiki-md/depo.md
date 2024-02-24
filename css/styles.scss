@@ -1,0 +1,830 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$bgColor: black;
+$gray: #F3F5F7;
+$delivery: #3520f5;
+$calculator: #E6007E;
+$configurator: #EC6708;
+$success: #50AF31;
+
+$borderRadius: 5px;
+$padding: 10px;
+$marginBottom: 20px;
+$iconSize: 1.25rem;
+$smallText: 0.85rem;
+$titleSize: 1.75rem;
+$logoHeight: 40px;
+
+@mixin flex($dir, $justify, $align, $gap: 10px) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid($col) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  align-items: center;
+}
+
+@mixin button {
+  border-radius: $borderRadius;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin input {
+  border-radius: $borderRadius;
+  padding: $padding;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding: 20px;
+  margin: auto;
+}
+
+body {
+  background-color: black;
+}
+
+header {
+  background-color: $bgColor;
+  width: 100vw;
+  min-height: 80px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+
+  .container {
+    padding: 0 20px !important;
+
+    #logo {
+      height: $logoHeight;
+    }
+
+    #search-form {
+      @include flex(row, center, center, 0);
+      border-radius: $borderRadius;
+      background-color: white;
+
+      input {
+        @include input;
+      }
+
+      button {
+        @include button;
+        height: 40px;
+        width: 40px;
+
+        i {
+          color: black;
+          font-size: $iconSize
+        }
+      }
+    }
+
+    .header-btn,
+    #search-btn {
+      @include flex(row, center, center, 0);
+        @include button;
+        justify-self: end;
+        height: 40px;
+        width: 40px;
+        background: white;
+
+        i {
+          font-size: $iconSize;
+        }
+        
+        .fa-xmark {
+          display: none;
+        }
+    }
+    
+    .mobile-header {
+      @include flex(row, space-between, center);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: 100%;
+
+      .mobile-header-controls {
+        @include flex(row, flex-end, center);
+      }
+    }
+
+    .desktop-header {
+      display: none !important;
+      @include flex(column, space-between, flex-start);
+      height: 100px;
+
+      .header-contacts {
+        padding-top: $padding;
+        width: 100%;
+
+        ul {
+          @include flex(row, space-between, center);
+          width: 100%;
+
+          div {
+            @include flex(row, flex-start, center, 15px);
+          }
+
+          li, a {
+            @include flex(row, flex-start, center);
+
+            span {
+              font-size: $smallText;
+            }
+          }
+        }
+      }
+
+      .header-main-left,
+      .header-main-right {
+        @include flex(row, flex-start, center, 15px);
+      }
+
+      .header-main {
+        @include flex(row, space-between, center);
+        border-radius: $borderRadius;
+        padding: $padding;
+        background-color: black;
+        width: 100%;
+
+        li, a, span {
+          color: white;
+        }
+
+        button {
+          @include flex(row, center, center, 5px);
+          padding: $padding;
+          width: auto;
+
+          span {
+            color: black;
+          }
+
+          i {
+            font-size: $iconSize;
+          }
+
+          .fa-xmark {
+            display: none;
+          }
+        }
+
+        nav ul {
+          @include flex(row, flex-start, center, 15px);
+
+          li a {
+            @include flex(row, flex-start, center, 5px);
+          }
+        }
+
+        .header-user-links {
+          @include flex(row, flex-start, center, 15px);
+
+          i {
+            font-size: $iconSize;
+          }
+        }
+      }
+    }
+  }
+}
+
+.categories {
+  padding: $padding;
+
+  ul {
+    @include flex(column, flex-start, flex-start);
+    gap: 10px;
+    width: 100%;
+
+    .category {
+      width: 100%;
+      border-radius: $borderRadius;
+      padding: $padding;
+      background-color: white;
+
+      a {
+        @include flex(row, space-between, center);
+        cursor: pointer;
+
+        span {
+          @include flex(row, flex-start, center);
+
+          img {
+            height: 25px;
+            width: 25px;
+            object-fit: contain;
+          }
+        }
+
+        i {
+          font-size: $iconSize;
+        }
+      }
+    }
+  }
+}
+
+.contact-details {
+  @include flex(column, flex-start, flex-start);
+  padding: $padding;
+
+  ul {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+
+    .contact-list-item,
+    .schedule-list-item,
+    .social-media-links {
+      @include flex(row, flex-start, flex-start);
+      border-radius: $borderRadius;
+      padding: $padding;
+      width: 100%;
+      background-color: white;
+
+      a {
+        @include flex(row, flex-start, center);
+      }
+
+      i {
+        @include flex(row, center, center);
+        width: 20px;
+        font-size: $iconSize;
+      }
+    }
+
+    .social-media-links {
+      @include flex(row, flex-start, center, 15px);
+
+      i {
+        font-size: $iconSize;
+      }
+    }
+  }
+}
+
+#burger-menu {
+  @include flex(column, flex-start, stretch);
+  background-color: $gray;
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: fixed;
+  top: 80px;
+  left: -100vw;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+
+  .container {
+    height: 100%;
+  }
+
+  nav {
+    @include flex(column, flex-start, flex-start);
+    padding: $padding;
+
+    ul {
+      @include grid(2);
+      gap: 10px;
+      width: 100%;
+
+      li {
+        a {
+          @include flex(row, flex-start, center);
+          border-radius: $borderRadius;
+          padding: $padding;
+          background-color: white;
+
+          i {
+            font-size: $iconSize;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh);
+  padding-top: 80px;
+  background-color: white;
+
+  .hero {
+    border-radius: $borderRadius;
+    margin-bottom: $marginBottom;
+    overflow: hidden;
+    width: 100%;
+
+    .swiper {
+      border-radius: $borderRadius;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .desktop-banner {
+        display: none;
+      }
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .products {
+    margin-bottom: $marginBottom;
+
+    .title-box {
+      @include flex(column, flex-start, flex-start, 5px);
+      padding: $padding 0;
+
+      h1 {
+        font-size: $titleSize;
+      }
+
+      a {
+        @include flex(row, flex-start, center);
+        font-size: 1rem;
+
+        i {
+          font-size: .85rem;
+        }
+      }
+    }
+
+    .products-list {
+      @include flex(row, flex-start, flex-start, 0px);
+      width: 100%;
+      margin-bottom: 10px;
+
+      .swiper-slide {
+        width: calc(50% - 10px);
+
+        .product {
+          @include flex(column, flex-start, stretch);
+          width: 100%;
+  
+          .product-image {
+            height: 100%;
+            width: 100%;
+            padding: $padding;
+  
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+  
+          .product-details {
+            @include flex(column, flex-start, flex-start);
+  
+            a {
+              font-weight: 600;
+            }
+  
+            p, span {
+              font-size: $smallText;
+            }
+  
+            .product-price {
+              width: 100%;
+              @include flex(column, flex-start, flex-start, 5px);
+
+              span:nth-child(1) {
+                font-weight: 600;
+              }
+            }
+  
+            .product-interactions {
+              width: 100%;
+              @include flex(row, space-between, center);
+  
+              form {
+                width: 100%;
+                button {
+                  @include button;
+                  padding: $padding;
+                  width: 100%;
+                  background-color: $gray;
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .products-swiper {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .products-page-link {
+      @include flex(row, center, center);
+      background-color: $gray;
+      padding: $padding;
+      border-radius: $borderRadius;
+      width: 100%;
+
+      i {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .self-promo {
+    @include grid(2);
+    margin-bottom: $marginBottom;
+    gap: 10px;
+
+    .self-promo-box {
+      @include flex(column, center, center);
+      border-radius: $borderRadius;
+      background: $gray;
+      padding: $padding;
+      height: 100%;
+
+      i {
+        font-size: calc($iconSize * 1.25);
+      }
+
+      .fa-truck {
+        color: $delivery;
+      }
+
+      .fa-calculator {
+        color: $calculator;
+      }
+
+      .fa-gear {
+        color: $configurator;
+      }
+
+      .fa-check {
+        color: $success;
+      }
+
+      .self-promo-content {
+        @include flex(column, center, center, 5px);
+        text-align: center;
+
+        p {
+          font-size: $smallText;
+        }
+      }
+    }
+  }
+
+  .promo-banners {
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: $marginBottom;
+
+    .promo-banner {
+      @include flex(column, space-between, flex-start);
+      border-radius: $borderRadius;
+      padding: $padding;
+      background-color: black;
+      color: white;
+      height: auto;
+
+      .promo-banner-content {
+        @include flex(column, flex-start, flex-start);
+        padding: $padding;
+
+        h1 {
+          font-size: $titleSize;
+        }
+
+        p {
+          font-size: $smallText;
+        }
+
+        a {
+          @include flex(row, center, center);
+          @include button;
+          padding: $padding;
+          background-color: white;
+          color: black;
+
+          i {
+            font-size: $smallText;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .newsletter {
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: $marginBottom;
+
+    .newsletter-content {
+      @include flex(column, flex-start, flex-start);
+
+      h1 {
+        font-size: $titleSize;
+      }
+
+      p {
+        font-size: $smallText;
+      }
+    }
+
+    form {
+      width: 100%;
+      @include flex(column, flex-start, stretch);
+
+      input,
+      button {
+        @include button;
+        padding: $padding;
+        background-color: $gray;
+      }
+
+      button {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}
+
+footer {
+  padding: $padding;
+
+  h3, p, span, i, a {
+    color: white;
+  }
+
+  .footer-main {
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: $marginBottom;
+
+    .footer-contacts {
+      margin-bottom: $marginBottom;
+  
+      img {
+        height: $logoHeight;
+        margin-bottom: $marginBottom;
+      }
+  
+      ul {
+        @include flex(column, flex-start, flex-start, 10px);
+    
+        i {
+          @include flex(row, center, center);
+          width: 20px;
+          font-size: $iconSize;
+        }
+    
+        a {
+          @include flex(row, flex-start, center);
+        }
+    
+        .footer-social-media {
+          @include flex(row, flex-start, center, 15px);
+        }
+      }
+    }
+  
+    .footer-links {
+      margin-bottom: $marginBottom;
+      height: 100%;
+      
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+  
+      ul {
+        @include flex(column, flex-start, flex-start);
+      }
+    }
+  }
+
+  .footer-end {
+    @include flex(column, flex-start, flex-start);
+
+    .author-signature {
+      @include flex(row, center, center, 10px);
+
+      a {
+        @include flex(row, center, center, 10px);
+
+        img {
+          height: 40px;
+          width: 40px;
+        }
+
+        span {
+          font-size: 1.25rem;
+          padding-bottom: 2.5px;
+          border-bottom: 2.5px dotted white;
+        }
+      }
+    }
+  }
+}
+
+.swiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    i {
+      font-size: 2rem;
+      color: black;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: black;
+  }
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  main {
+    .hero {
+      .mobile-banner {
+        display: none;
+      }
+
+      .desktop-banner {
+        display: inline-block !important;
+      }
+    }
+
+    .products-list {
+      .swiper-slide {
+        width: calc((100% / 3) - 13.3px) !important;
+      }
+    }
+
+    .promo-banners {
+      @include flex(column, flex-start, flex-start);
+      
+      .promo-banner {
+        @include flex(row, space-between, center);
+        height: 250px;
+
+        img {
+          height: 100%;
+          padding: $padding;
+          width: 50%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: black;
+
+    .footer-main {
+      @include grid(2);
+
+      .footer-contacts {
+        grid-column: 1 / 3;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  body,
+  header {
+    background-color: white;
+  }
+
+  header {
+    .container {
+      .mobile-header,
+      #burger-menu {
+        display: none !important;
+      }
+
+      .desktop-header {
+        display: flex !important;
+      }
+    }
+  }
+
+  main {
+    padding-top: 100px;
+
+    .products-list {
+      .swiper-slide {
+        width: calc((100% / 4) - 10px) !important;
+      }
+    }
+
+    .self-promo {
+      grid-template-columns: repeat(4, 1fr) !important;
+
+      .self-promo-box {
+        height: 100%;
+      }
+    }
+
+    .promo-banners {
+      flex-direction: row !important;
+
+      .promo-banner {
+        flex-direction: column !important;
+        height: 450px;
+
+        img {
+          height: 60% !important;
+          width: 100% !important;
+        }
+      }
+    }
+
+    .newsletter {
+      flex-direction: row !important;
+
+      .newsletter-content,
+      form {
+        width: 50% !important;
+      }
+    }
+  }
+
+  footer {
+    .footer-main {
+      @include grid(3);
+
+      .footer-contacts {
+        grid-column: 1 / 2;
+      }
+    }
+
+    .footer-end {
+      @include flex(row, space-between, center);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    padding-top: 100px;
+
+    .products-list {
+      .swiper-slide {
+        width: calc((100% / 5) - 16px) !important;
+      }
+    }
+  }
+}
