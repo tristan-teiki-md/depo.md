@@ -505,6 +505,10 @@ main {
         .product {
           @include flex(column, flex-start, stretch);
           width: 100%;
+
+          a {
+            font-size: 1.25rem;
+          }
   
           .product-image {
             height: 100%;
@@ -526,6 +530,10 @@ main {
   
             p, span {
               font-size: $smallText;
+            }
+
+            .product-tags {
+              margin-bottom: 0px !important;
             }
   
             .product-price {
@@ -679,6 +687,26 @@ main {
     }
   }
 
+  .product-tags {
+    @include flex(row, flex-start, flex-start);
+    margin-bottom: $marginBottom;
+
+    .tag {
+      @include flex(row, center, center);
+      border-radius: $borderRadius;
+      padding: $padding;
+      color: white;
+    }
+
+    .tag-sale {
+      background-color: $calculator;
+    }
+
+    .tag-popular {
+      background-color: $delivery;
+    }
+  }
+
   .product-wrapper {
     .product-path {
       margin-bottom: $marginBottom;
@@ -690,26 +718,6 @@ main {
           margin: 0 $padding;
           color: $darkerGray
         }
-      }
-    }
-
-    .product-tags {
-      @include flex(row, flex-start, flex-start);
-      margin-bottom: $marginBottom;
-
-      .tag {
-        @include flex(row, center, center);
-        border-radius: $borderRadius;
-        padding: $padding;
-        color: white;
-      }
-
-      .tag-sale {
-        background-color: $calculator;
-      }
-
-      .tag-popular {
-        background-color: $delivery;
       }
     }
 
@@ -1232,6 +1240,11 @@ footer {
       .promo-banner {
         flex-direction: column !important;
         height: 450px;
+        width: 50%;
+
+        .promo-banner-content {
+          width: 100%;
+        }
 
         img {
           height: 60% !important;
@@ -1253,6 +1266,10 @@ footer {
       display: flex;
       gap: $padding;
       flex-wrap: wrap;
+
+      p, span {
+        font-size: 1rem !important;
+      }
 
       .product-images {
         max-width: 75%;

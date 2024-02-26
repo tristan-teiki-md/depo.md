@@ -551,6 +551,9 @@ main .products .products-list .swiper-slide .product {
   gap: 10px;
   width: 100%;
 }
+main .products .products-list .swiper-slide .product a {
+  font-size: 1.25rem;
+}
 main .products .products-list .swiper-slide .product .product-image {
   height: 100%;
   width: 100%;
@@ -572,6 +575,9 @@ main .products .products-list .swiper-slide .product .product-details a {
 }
 main .products .products-list .swiper-slide .product .product-details p, main .products .products-list .swiper-slide .product .product-details span {
   font-size: 0.85rem;
+}
+main .products .products-list .swiper-slide .product .product-details .product-tags {
+  margin-bottom: 0px !important;
 }
 main .products .products-list .swiper-slide .product .product-details .product-price {
   width: 100%;
@@ -746,17 +752,7 @@ main .newsletter form button {
   background-color: black;
   color: white;
 }
-main .product-wrapper .product-path {
-  margin-bottom: 20px;
-}
-main .product-wrapper .product-path p {
-  font-size: 0.85rem;
-}
-main .product-wrapper .product-path p span {
-  margin: 0 10px;
-  color: #CED6DE;
-}
-main .product-wrapper .product-tags {
+main .product-tags {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -764,7 +760,7 @@ main .product-wrapper .product-tags {
   gap: 10px;
   margin-bottom: 20px;
 }
-main .product-wrapper .product-tags .tag {
+main .product-tags .tag {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -774,11 +770,21 @@ main .product-wrapper .product-tags .tag {
   padding: 10px;
   color: white;
 }
-main .product-wrapper .product-tags .tag-sale {
+main .product-tags .tag-sale {
   background-color: #E6007E;
 }
-main .product-wrapper .product-tags .tag-popular {
+main .product-tags .tag-popular {
   background-color: #3520f5;
+}
+main .product-wrapper .product-path {
+  margin-bottom: 20px;
+}
+main .product-wrapper .product-path p {
+  font-size: 0.85rem;
+}
+main .product-wrapper .product-path p span {
+  margin: 0 10px;
+  color: #CED6DE;
 }
 main .product-wrapper .product-title {
   margin-bottom: 20px;
@@ -1399,6 +1405,10 @@ footer .footer-end .author-signature a span {
   main .promo-banners .promo-banner {
     flex-direction: column !important;
     height: 450px;
+    width: 50%;
+  }
+  main .promo-banners .promo-banner .promo-banner-content {
+    width: 100%;
   }
   main .promo-banners .promo-banner img {
     height: 60% !important;
@@ -1415,6 +1425,9 @@ footer .footer-end .author-signature a span {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+  }
+  main .product-details p, main .product-details span {
+    font-size: 1rem !important;
   }
   main .product-details .product-images {
     max-width: 75%;
