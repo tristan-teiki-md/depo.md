@@ -329,6 +329,7 @@ header {
 
       li {
         height: 100%;
+        max-height: 55px;
 
         a {
           @include flex(row, flex-start, center);
