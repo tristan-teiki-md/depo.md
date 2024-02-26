@@ -139,6 +139,10 @@ header {
       padding-bottom: 20px;
       height: 100%;
 
+      i {
+        color: black !important;
+      }
+
       .mobile-header-controls {
         @include flex(row, flex-end, center);
       }
@@ -324,11 +328,14 @@ header {
       width: 100%;
 
       li {
+        height: 100%;
+
         a {
           @include flex(row, flex-start, center);
           border-radius: $borderRadius;
           padding: $padding;
           background-color: white;
+          height: 100%;
 
           i {
             font-size: $iconSize;
@@ -470,6 +477,12 @@ main {
       width: 100%;
       background-color: $gray;
       color: black;
+    }
+  }
+
+  .product-tags {
+    .tag span {
+      display: none;
     }
   }
 
@@ -709,13 +722,13 @@ main {
 
   .product-wrapper {
     .product-path {
+      @include flex(row, flex-start, flex-start);
       margin-bottom: $marginBottom;
 
       p {
         font-size: $smallText;
         
         span {
-          margin: 0 $padding;
           color: $darkerGray
         }
       }
@@ -1223,6 +1236,12 @@ footer {
     .products-list {
       .swiper-slide {
         width: calc((100% / 4) - 10px) !important;
+      }
+    }
+
+    .product-tags {
+      .tag span {
+        display: inline-block;
       }
     }
 

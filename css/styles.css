@@ -111,6 +111,9 @@ header .container .mobile-header {
   padding-bottom: 20px;
   height: 100%;
 }
+header .container .mobile-header i {
+  color: black !important;
+}
 header .container .mobile-header .mobile-header-controls {
   display: flex;
   flex-direction: row;
@@ -357,6 +360,9 @@ header .container .desktop-header .header-main .header-user-links i {
   gap: 10px;
   width: 100%;
 }
+#burger-menu nav ul li {
+  height: 100%;
+}
 #burger-menu nav ul li a {
   display: flex;
   flex-direction: row;
@@ -366,6 +372,7 @@ header .container .desktop-header .header-main .header-user-links i {
   border-radius: 5px;
   padding: 10px;
   background-color: white;
+  height: 100%;
 }
 #burger-menu nav ul li a i {
   font-size: 1.25rem;
@@ -505,6 +512,9 @@ main .remove-from-cart button {
   width: 100%;
   background-color: #F3F5F7;
   color: black;
+}
+main .product-tags .tag span {
+  display: none;
 }
 main .products {
   margin-bottom: 20px;
@@ -777,13 +787,17 @@ main .product-tags .tag-popular {
   background-color: #3520f5;
 }
 main .product-wrapper .product-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 20px;
 }
 main .product-wrapper .product-path p {
   font-size: 0.85rem;
 }
 main .product-wrapper .product-path p span {
-  margin: 0 10px;
   color: #CED6DE;
 }
 main .product-wrapper .product-title {
@@ -1392,6 +1406,9 @@ footer .footer-end .author-signature a span {
   }
   main .products-list .swiper-slide {
     width: calc(25% - 10px) !important;
+  }
+  main .product-tags .tag span {
+    display: inline-block;
   }
   main .self-promo {
     grid-template-columns: repeat(4, 1fr) !important;
