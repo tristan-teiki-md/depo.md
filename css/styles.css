@@ -360,10 +360,6 @@ header .container .desktop-header .header-main .header-user-links i {
   gap: 10px;
   width: 100%;
 }
-#burger-menu nav ul li {
-  height: 100%;
-  max-height: 55px;
-}
 #burger-menu nav ul li a {
   display: flex;
   flex-direction: row;
