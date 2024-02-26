@@ -151,10 +151,11 @@ header {
     .desktop-header {
       display: none !important;
       @include flex(column, space-between, flex-start);
-      height: 100px;
+      height: 160px;
 
       .header-contacts {
-        padding-top: $padding;
+        padding: $padding 0;
+        border-bottom: 1px solid $darkerGray;
         width: 100%;
 
         ul {
@@ -175,17 +176,57 @@ header {
         }
       }
 
-      .header-main-left,
-      .header-main-right {
-        @include flex(row, flex-start, center, 15px);
+      .header-middle {
+        @include flex(row, space-between, center);
+        width: 100%;
+
+        #logo {
+          font-size: 1.75rem;
+          font-weight: 600;
+        }
+
+        ul {
+          @include flex(row, flex-start, center, 25px);
+
+          a {
+            @include flex(row, center, center);
+
+            i {
+              font-size: $iconSize;
+            }
+          }
+        }
       }
 
       .header-main {
-        @include flex(row, space-between, center);
+        @include grid(3);
+        grid-template-columns: 1.755fr 2fr .5fr;
         border-radius: $borderRadius;
         padding: $padding;
         background-color: black;
         width: 100%;
+
+        .header-main-left {
+          @include flex(row, flex-start, center, 25px);
+        }
+
+        #search-form {
+          @include flex(row, space-between, center);
+          background-color: white;
+          input {
+            width: calc(100% - 40px);
+          }
+        }
+
+        .language-changer {
+          @include flex(row, flex-end, center);
+
+          img {
+            height: 25px;
+            width: 25px;
+            border-radius: 5px;
+          }
+        }
 
         li, a, span {
           color: white;
@@ -351,7 +392,7 @@ header {
   left: -100svw;
   top: 0px;
   z-index: 1500;
-  padding: 100px 20px 20px 20px;
+  padding: 160px 20px 20px 20px;
   background-color: rgba(0, 0, 0, 0);
   transition: all 0.3s ease-in-out, background-color 0.8s ease-in-out;
 
@@ -373,6 +414,12 @@ header {
 
           li {
             background-color: $gray;
+          }
+        }
+
+        .category-sale {
+          span {
+            color: $configurator;
           }
         }
 
@@ -429,7 +476,7 @@ header {
 main {
   width: 100vw;
   min-height: calc(100vh);
-  padding-top: 80px;
+  padding-top: 80px !important;
   background-color: white;
 
   .hero {
@@ -478,21 +525,27 @@ main {
     }
   }
 
-  .product-tags {
-    .tag span {
-      display: none;
-    }
-  }
-
   .products {
+    @include flex(row, flex-start, flex-start);
     margin-bottom: $marginBottom;
+    height: 550px;
+    width: 100%;
 
     .title-box {
-      @include flex(column, flex-start, flex-start, 5px);
-      padding: $padding 0;
+      @include flex(column, flex-start, flex-start);
+      background-color: $gray;
+      border-radius: $borderRadius;
+      padding: $padding;
+      flex-shrink: 0;
+      width: 50%;
+      height: 100%;
 
       h1 {
         font-size: $titleSize;
+      }
+
+      p {
+        font-weight: 600;
       }
 
       a {
@@ -503,56 +556,86 @@ main {
           font-size: .85rem;
         }
       }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .quick-searches-list {
+        @include flex(row, flex-start, flex-start, 5px);
+        flex-wrap: wrap;
+
+        .quick-search {
+          padding: $padding;
+          background-color: black;
+          border-radius: $borderRadius;
+          color: white;
+          span {
+            font-size: $smallText;
+          }
+        }
+      }
     }
 
     .products-list {
       @include flex(row, flex-start, flex-start, 0px);
-      width: 100%;
+      width: 50%;
       margin-bottom: 10px;
 
       .swiper-slide {
-        width: calc(50% - 10px);
+        width: calc(100%);
+
+        .product-tags {
+          span {
+            display: none;
+          }
+        }
 
         .product {
-          @include flex(column, flex-start, stretch);
+          @include flex(column, flex-start, stretch, 0px);
           width: 100%;
+          height: 100%;
 
           a {
             font-size: 1.25rem;
           }
   
           .product-image {
-            height: 100%;
+            height: 300px;
             width: 100%;
             padding: $padding;
   
             img {
               height: 100%;
               width: 100%;
+              object-fit: contain;
             }
           }
   
           .product-details {
-            @include flex(column, flex-start, flex-start);
-  
-            a {
-              font-weight: 600;
-            }
-  
-            p, span {
-              font-size: $smallText;
-            }
+            @include flex(column, space-between, flex-start);
+            height: 250px;
 
-            .product-tags {
-              margin-bottom: 0px !important;
-            }
-  
-            .product-price {
-              width: 100%;
-              @include flex(column, flex-start, flex-start, 5px);
-
-              span:nth-child(1) {
+            .product-details-data {
+              @include flex(column, flex-start, flex-start);
+    
+              a {
                 font-weight: 600;
+              }
+  
+              .product-tags {
+                margin-bottom: 0px !important;
+              }
+    
+              .product-price {
+                width: 100%;
+                @include flex(column, flex-start, flex-start, 5px);
+  
+                span:nth-child(1) {
+                  font-weight: 600;
+                }
               }
             }
           }
@@ -1159,6 +1242,8 @@ footer {
   }
 
   main {
+    padding-top: 160px !important;
+
     .hero {
       .mobile-banner {
         display: none;
@@ -1166,12 +1251,6 @@ footer {
 
       .desktop-banner {
         display: inline-block !important;
-      }
-    }
-
-    .products-list {
-      .swiper-slide {
-        width: calc((100% / 3) - 13.3px) !important;
       }
     }
 
@@ -1231,15 +1310,23 @@ footer {
   main {
     padding-top: 100px;
 
-    .products-list {
-      .swiper-slide {
-        width: calc((100% / 4) - 10px) !important;
+    .products {
+      .title-box {
+        width: 33% !important;
       }
-    }
 
-    .product-tags {
-      .tag span {
-        display: inline-block;
+      .product-tags {
+        span {
+          display: inline-block !important;
+        }
+      }
+
+      .products-list {
+        width: 66% !important;
+
+        .swiper-slide {
+          width: calc((100% / 2) - 10px) !important;
+        }
       }
     }
 
@@ -1357,9 +1444,17 @@ footer {
   main {
     padding-top: 100px;
 
-    .products-list {
-      .swiper-slide {
-        width: calc((100% / 5) - 16px) !important;
+    .products {
+      .title-box {
+        width: 20% !important;
+      }
+
+      .products-list {
+        width: 80% !important;
+
+        .swiper-slide {
+          width: calc((100% / 4) - 15px) !important;
+        }
       }
     }
 

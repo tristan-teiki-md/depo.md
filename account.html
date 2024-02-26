@@ -69,51 +69,59 @@
               </div>
             </ul>
           </div>
+          <div class="header-middle">
+            <a href="/index.html" id="logo">
+              DEPO
+            </a>
+            <ul class="header-user-links">
+              <li>
+                <a href="/cart.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/favorites.html">
+                  <i class="fa-solid fa-heart"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/account.html">
+                  <i class="fa-solid fa-user"></i>
+                  Login/Register
+                </a>
+              </li>
+            </ul>
+          </div>
           <div class="header-main">
             <div class="header-main-left">
-              <a href="/index.html">
-                <img id="logo" src="images/logo.png" alt="Depo Logo">
-              </a>
               <button id="categories-btn" class="header-btn">
                 <i class="fa-solid fa-bars"></i>
                 <i class="fa-solid fa-xmark"></i>
                 <span>Categorii</span>
               </button>
-              <form id="search-form" action="">
-                <input type="text" placeholder="Căută produse" />
-                <button type="submit">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-              </form>
-            </div>
-            <div class="header-main-right">
               <nav>
                 <ul>
                   <li>
-                    <a href=""><i class="fa-solid fa-screwdriver-wrench"></i><span>Service centru</span></a>
+                    <a href=""><span>Service centru</span></a>
                   </li>
                   <li>
-                    <a href=""><i class="fa-solid fa-gear"></i><span>Configurator PC</span></a>
+                    <a href=""><span>Partenerilor</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>Configurator PC</span></a>
                   </li>
                 </ul>
               </nav>
-              <ul class="header-user-links">
-                <li>
-                  <a href="/cart.html">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="/favorites.html">
-                    <i class="fa-solid fa-heart"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="/account.html">
-                    <i class="fa-solid fa-user"></i>
-                  </a>
-                </li>
-              </ul>
+            </div>
+            <form id="search-form" action="">
+              <input type="text" placeholder="Căută produse" />
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+            <div class="language-changer">
+              <span>Rusă</span>
+              <img src="images/languages/russian-flag.webp" alt="Russian Flag">
             </div>
           </div>
         </div>
@@ -365,9 +373,32 @@
       <div class="container" id="categories-container">
         <ul class="categories">
           <div class="category">
+            <li class="category-sale">
+              <a href="">
+                <span><img src="images/icons/sale-icon.svg" alt="">Oferte</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru produsele cu ofertă</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
             <li>
               <a href="">
-                <span><img src="images/icons/gaming.svg" alt="">Produse de gaming</span></i>
+                <span><img src="images/icons/phone.svg" alt="">Telefoane, Gadget</span></i>
               </a>
             </li>
             <div class="subcategories">
@@ -390,12 +421,12 @@
           <div class="category">
             <li>
               <a href="">
-                <span><img src="images/icons/computer.svg" alt="">Calculatoare și componente</span></i>
+                <span><img src="images/icons/computer.svg" alt="">Laptop, Computere, Tablete</span></i>
               </a>
             </li>
             <div class="subcategories">
               <div class="subcategory">
-                <h3>Subcategorii pentru calculatoare și componente</h3>
+                <h3>Subcategorii pentru laptop, comutere, tablete</h3>
                 <ul class="subsubcategories">
                   <li>
                     <a href="">Subsubcategory</a>
@@ -413,12 +444,196 @@
           <div class="category">
             <li>
               <a href="">
-                <span><img src="images/icons/phone.svg" alt="">Telefoane</span></i>
+                <span><img src="images/icons/gaming.svg" alt="">Gaming, Soft</span></i>
               </a>
             </li>
             <div class="subcategories">
               <div class="subcategory">
-                <h3>Subcategorii pentru telefoane</h3>
+                <h3>Subcategorii pentru gaming și soft</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/tv.svg" alt="">TV, Audio, Video, Foto</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru tv, audio, video, foto</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/smart-home.svg" alt="">Smart Home</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru produsele smart home</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/washing-machine.svg" alt="">Electrocasnice</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru electrocasnice</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/printer.svg" alt="">Birotică și rețealistică</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru birotică și rețealistică</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/scooter.svg" alt="">Agrement și sport</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru agrement și sport</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/toys.svg" alt="">Copii și jucării</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru copii și jucării</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/auto.svg" alt="">Auto electronică</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru auto electronică</h3>
+                <ul class="subsubcategories">
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                  <li>
+                    <a href="">Subsubcategory</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="category">
+            <li>
+              <a href="">
+                <span><img src="images/icons/tool.svg" alt="">Scule electrice</span></i>
+              </a>
+            </li>
+            <div class="subcategories">
+              <div class="subcategory">
+                <h3>Subcategorii pentru scule electrice</h3>
                 <ul class="subsubcategories">
                   <li>
                     <a href="">Subsubcategory</a>
