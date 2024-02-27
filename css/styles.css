@@ -445,7 +445,12 @@ header .container .desktop-header .header-main .header-user-links i {
 }
 #categories-menu .container .categories {
   width: 30%;
+  height: 100%;
   padding: 0px;
+  overflow-y: scroll;
+}
+#categories-menu .container .categories::-webkit-scrollbar {
+  display: none;
 }
 #categories-menu .container .categories .category:hover .subcategories {
   display: flex;
@@ -650,9 +655,6 @@ main .products .products-list .swiper-slide .product {
   width: 100%;
   height: 100%;
 }
-main .products .products-list .swiper-slide .product a {
-  font-size: 1.25rem;
-}
 main .products .products-list .swiper-slide .product .product-image {
   height: 300px;
   width: 100%;
@@ -680,6 +682,7 @@ main .products .products-list .swiper-slide .product .product-details .product-d
   gap: 10px;
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data a {
+  font-size: 1.15rem;
   font-weight: 600;
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data .product-tags {
@@ -875,6 +878,9 @@ main .product-tags .tag {
   border-radius: 5px;
   padding: 10px;
   color: white;
+}
+main .product-tags .tag i, main .product-tags .tag span {
+  font-size: 0.85rem !important;
 }
 main .product-tags .tag-sale {
   background-color: #E6007E;
