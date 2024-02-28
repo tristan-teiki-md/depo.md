@@ -43,7 +43,7 @@ header .container {
   padding: 0 20px !important;
 }
 header .container #logo {
-  height: 40px;
+  height: 50px;
 }
 header .container #search-form {
   display: flex;
@@ -576,7 +576,7 @@ main .products {
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 20px;
-  height: 550px;
+  height: 500px;
   width: 100%;
 }
 main .products .title-box {
@@ -672,7 +672,7 @@ main .products .products-list .swiper-slide .product .product-details {
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
-  height: 250px;
+  height: 200px;
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data {
   display: flex;
@@ -1348,7 +1348,7 @@ footer .footer-main .footer-contacts {
   margin-bottom: 20px;
 }
 footer .footer-main .footer-contacts img {
-  height: 40px;
+  height: 50px;
   margin-bottom: 20px;
 }
 footer .footer-main .footer-contacts ul {
@@ -1506,17 +1506,20 @@ footer .footer-end .author-signature a span {
   main {
     padding-top: 100px;
   }
+  main .products {
+    height: 500px !important;
+  }
   main .products .title-box {
-    width: 33% !important;
+    width: 25% !important;
   }
   main .products .product-tags span {
     display: inline-block !important;
   }
   main .products .products-list {
-    width: 66% !important;
+    width: 80% !important;
   }
   main .products .products-list .swiper-slide {
-    width: calc(50% - 10px) !important;
+    width: calc(33.3333333333% - 13px) !important;
   }
   main .self-promo {
     grid-template-columns: repeat(4, 1fr) !important;

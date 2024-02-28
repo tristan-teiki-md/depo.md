@@ -14,7 +14,7 @@ $marginBottom: 20px;
 $iconSize: 1.25rem;
 $smallText: 0.85rem;
 $titleSize: 1.75rem;
-$logoHeight: 40px;
+$logoHeight: 50px;
 
 @mixin flex($dir, $justify, $align, $gap: 10px) {
   display: flex;
@@ -534,7 +534,7 @@ main {
   .products {
     @include flex(row, flex-start, flex-start);
     margin-bottom: $marginBottom;
-    height: 550px;
+    height: 500px;
     width: 100%;
 
     .title-box {
@@ -618,7 +618,7 @@ main {
   
           .product-details {
             @include flex(column, space-between, flex-start);
-            height: 250px;
+            height: 200px;
 
             .product-details-data {
               @include flex(column, flex-start, flex-start);
@@ -1318,8 +1318,10 @@ footer {
     padding-top: 100px;
 
     .products {
+      height: 500px !important;
+
       .title-box {
-        width: 33% !important;
+        width: 25% !important;
       }
 
       .product-tags {
@@ -1329,10 +1331,10 @@ footer {
       }
 
       .products-list {
-        width: 66% !important;
+        width: 80% !important;
 
         .swiper-slide {
-          width: calc((100% / 2) - 10px) !important;
+          width: calc((100% / 3) - 13px) !important;
         }
       }
     }
