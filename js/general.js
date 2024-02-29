@@ -41,6 +41,15 @@ categoriesBtn.addEventListener("click", () => {
 });
 
 function disableScroll(disable) {
-  document.body.style.height = disable ? "100vh" : "auto";
-  document.body.style.overflowY = disable ? "hidden" : "scroll";
+  if (disable) {
+    document.body.dataset.scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.width = '100%';
+  } else {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, parseInt(document.body.dataset.scrollY || '0', 10));
+  }
 }
