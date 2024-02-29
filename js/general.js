@@ -9,10 +9,12 @@ burgerBtn.addEventListener("click", () => {
     burgerMenu.style.left = "-100%";
     menuIcon.style.display = "inline-block";
     closeMenuIcon.style.display = "none";
+    disableScroll(false);
   } else {
     burgerMenu.style.left = "0px";
     menuIcon.style.display = "none";
     closeMenuIcon.style.display = "inline-block";
+    disableScroll(true);
   }
 });
 
@@ -26,6 +28,7 @@ categoriesMenu.addEventListener("click", (event) => {
   if (event.target === categoriesMenu) {
     categoriesMenu.style.backgroundColor = "rgba(0, 0, 0, 0)";
     categoriesMenu.style.left = "-100svw";
+    disableScroll(false);
   }
 })
 
@@ -33,5 +36,11 @@ categoriesBtn.addEventListener("click", () => {
   if (categoriesMenu.style.left === "-100svw") {
     categoriesMenu.style.left = "0px";
     categoriesMenu.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+    disableScroll(true);
   }
 });
+
+function disableScroll(disable) {
+  document.body.style.height = disable ? "100vh" : "auto";
+  document.body.style.overflowY = disable ? "hidden" : "scroll";
+}

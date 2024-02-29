@@ -387,13 +387,17 @@ header .container .desktop-header .header-main .header-user-links i {
   height: calc(100vh - 80px);
   width: 100svw;
   position: fixed;
-  top: 80px;
+  top: 90px;
   left: -100svw;
   transition: all 0.3s ease-in-out;
-  z-index: 1000;
+  z-index: 900;
 }
 #burger-menu .container {
   height: 100%;
+  overflow: scroll;
+}
+#burger-menu .container::-webkit-scrollbar {
+  display: none;
 }
 #burger-menu nav {
   display: flex;
@@ -405,7 +409,7 @@ header .container .desktop-header .header-main .header-user-links i {
 }
 #burger-menu nav ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -658,7 +662,7 @@ main .products .products-list .swiper-slide .product:hover .product-image img {
   transform: scale(1.05);
 }
 main .products .products-list .swiper-slide .product .product-image {
-  height: 275px;
+  height: 225px;
   width: 100%;
   padding: 10px;
 }
@@ -675,7 +679,7 @@ main .products .products-list .swiper-slide .product .product-details {
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
-  height: 225px;
+  height: 275px;
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data {
   display: flex;
@@ -701,6 +705,11 @@ main .products .products-list .swiper-slide .product .product-details .product-d
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data .product-price span:nth-child(1) {
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data .product-price span {
   display: flex;
@@ -1524,7 +1533,16 @@ footer .footer-end .author-signature a span {
   main .products .title-box {
     width: 25% !important;
   }
-  main .products .product-tags span {
+  main .products .product .product-image {
+    height: 275px !important;
+  }
+  main .products .product .product-details {
+    height: 225px !important;
+  }
+  main .products .product .product-details .product-price span:nth-child(1) {
+    flex-direction: row !important;
+  }
+  main .products .product .product-tags span {
     display: inline-block !important;
   }
   main .products .products-list {
