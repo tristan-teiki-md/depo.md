@@ -7,6 +7,7 @@ $delivery: #3520f5;
 $calculator: #E6007E;
 $configurator: #EC6708;
 $success: #50AF31;
+$red: #ff002b;
 
 $borderRadius: 5px;
 $padding: 10px;
@@ -200,8 +201,7 @@ header {
 
       .header-main {
         @include grid(3);
-        grid-template-columns: 1.755fr 2fr .5fr;
-        border-radius: $borderRadius;
+        border-radius: 10px;
         padding: $padding;
         background-color: black;
         width: 100%;
@@ -392,7 +392,7 @@ header {
   left: -100svw;
   top: 0px;
   z-index: 1500;
-  padding: 160px 20px 20px 20px;
+  padding: 180px 20px 20px 20px;
   background-color: rgba(0, 0, 0, 0);
   transition: all 0.3s ease-in-out, background-color 0.8s ease-in-out;
 
@@ -490,11 +490,16 @@ main {
     margin-bottom: $marginBottom;
     overflow: hidden;
     width: 100%;
+    height: 100%;
+    
 
     .swiper {
-      border-radius: $borderRadius;
+      border-radius: 10px;
+      overflow: hidden;
       width: 100%;
       height: 100%;
+      margin-left: auto;
+      margin-right: auto;
 
       img {
         width: 100%;
@@ -505,11 +510,6 @@ main {
       .desktop-banner {
         display: none;
       }
-    }
-
-    .swiper {
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 
@@ -541,7 +541,7 @@ main {
       @include flex(column, flex-start, flex-start);
       background-color: $gray;
       border-radius: $borderRadius;
-      padding: $padding;
+      padding: calc($padding * 2);
       flex-shrink: 0;
       width: 50%;
       height: 100%;
@@ -603,9 +603,15 @@ main {
           @include flex(column, flex-start, stretch, 0px);
           width: 100%;
           height: 100%;
+
+          &:hover {
+            .product-image img {
+              transform: scale(1.05);
+            }
+          }
   
           .product-image {
-            height: 300px;
+            height: 275px;
             width: 100%;
             padding: $padding;
   
@@ -613,12 +619,13 @@ main {
               height: 100%;
               width: 100%;
               object-fit: contain;
+              transition: transform 0.2s ease-in;
             }
           }
   
           .product-details {
             @include flex(column, space-between, flex-start);
-            height: 200px;
+            height: 225px;
 
             .product-details-data {
               @include flex(column, flex-start, flex-start);
@@ -638,6 +645,15 @@ main {
   
                 span:nth-child(1) {
                   font-weight: 600;
+                }
+
+                span {
+                  @include flex(row, center, center);
+                }
+
+                .product-sale-price {
+                  color: $red;
+                  text-decoration: line-through;
                 }
               }
             }
@@ -714,21 +730,38 @@ main {
     .promo-banner {
       @include flex(column, space-between, flex-start);
       border-radius: $borderRadius;
-      padding: $padding;
       background-color: black;
       color: white;
-      height: auto;
+      height: 500px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.15s ease-in;
+      }
 
       .promo-banner-content {
         @include flex(column, flex-start, flex-start);
-        padding: $padding;
+        padding: calc($padding * 2);
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 
         h1 {
           font-size: $titleSize;
-        }
-
-        p {
-          font-size: $smallText;
         }
 
         a {
@@ -742,10 +775,6 @@ main {
             font-size: $smallText;
           }
         }
-      }
-
-      img {
-        width: 100%;
       }
     }
   }
@@ -800,7 +829,7 @@ main {
     }
 
     .tag-sale {
-      background-color: $calculator;
+      background-color: $red;
     }
 
     .tag-popular {
@@ -1249,7 +1278,7 @@ footer {
   }
 
   main {
-    padding-top: 160px !important;
+    padding-top: 100px !important;
 
     .hero {
       .mobile-banner {
@@ -1263,18 +1292,6 @@ footer {
 
     .promo-banners {
       @include flex(column, flex-start, flex-start);
-      
-      .promo-banner {
-        @include flex(row, space-between, center);
-        height: 250px;
-
-        img {
-          height: 100%;
-          padding: $padding;
-          width: 50%;
-          object-fit: contain;
-        }
-      }
     }
   }
 
@@ -1315,7 +1332,7 @@ footer {
   }
 
   main {
-    padding-top: 100px;
+    padding-top: 160px !important;
 
     .products {
       height: 500px !important;
@@ -1349,21 +1366,6 @@ footer {
 
     .promo-banners {
       flex-direction: row !important;
-
-      .promo-banner {
-        flex-direction: column !important;
-        height: 450px;
-        width: 50%;
-
-        .promo-banner-content {
-          width: 100%;
-        }
-
-        img {
-          height: 60% !important;
-          width: 100% !important;
-        }
-      }
     }
 
     .newsletter {

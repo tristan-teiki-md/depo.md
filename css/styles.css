@@ -193,8 +193,7 @@ header .container .desktop-header .header-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  grid-template-columns: 1.755fr 2fr 0.5fr;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   background-color: black;
   width: 100%;
@@ -433,7 +432,7 @@ header .container .desktop-header .header-main .header-user-links i {
   left: -100svw;
   top: 0px;
   z-index: 1500;
-  padding: 160px 20px 20px 20px;
+  padding: 180px 20px 20px 20px;
   background-color: rgba(0, 0, 0, 0);
   transition: all 0.3s ease-in-out, background-color 0.8s ease-in-out;
 }
@@ -523,11 +522,15 @@ main .hero {
   margin-bottom: 20px;
   overflow: hidden;
   width: 100%;
+  height: 100%;
 }
 main .hero .swiper {
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
   width: 100%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 main .hero .swiper img {
   width: 100%;
@@ -537,10 +540,6 @@ main .hero .swiper img {
 }
 main .hero .swiper .desktop-banner {
   display: none;
-}
-main .hero .swiper {
-  margin-left: auto;
-  margin-right: auto;
 }
 main .product-interactions {
   width: 100%;
@@ -587,7 +586,7 @@ main .products .title-box {
   gap: 10px;
   background-color: #F3F5F7;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   flex-shrink: 0;
   width: 50%;
   height: 100%;
@@ -655,8 +654,11 @@ main .products .products-list .swiper-slide .product {
   width: 100%;
   height: 100%;
 }
+main .products .products-list .swiper-slide .product:hover .product-image img {
+  transform: scale(1.05);
+}
 main .products .products-list .swiper-slide .product .product-image {
-  height: 300px;
+  height: 275px;
   width: 100%;
   padding: 10px;
 }
@@ -665,6 +667,7 @@ main .products .products-list .swiper-slide .product .product-image img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  transition: transform 0.2s ease-in;
 }
 main .products .products-list .swiper-slide .product .product-details {
   display: flex;
@@ -672,7 +675,7 @@ main .products .products-list .swiper-slide .product .product-details {
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
-  height: 200px;
+  height: 225px;
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data {
   display: flex;
@@ -698,6 +701,17 @@ main .products .products-list .swiper-slide .product .product-details .product-d
 }
 main .products .products-list .swiper-slide .product .product-details .product-details-data .product-price span:nth-child(1) {
   font-weight: 600;
+}
+main .products .products-list .swiper-slide .product .product-details .product-details-data .product-price span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main .products .products-list .swiper-slide .product .product-details .product-details-data .product-price .product-sale-price {
+  color: #ff002b;
+  text-decoration: line-through;
 }
 main .products .products-swiper {
   width: 100%;
@@ -776,10 +790,25 @@ main .promo-banners .promo-banner {
   align-items: flex-start;
   gap: 10px;
   border-radius: 5px;
-  padding: 10px;
   background-color: black;
   color: white;
-  height: auto;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+main .promo-banners .promo-banner:hover img {
+  transform: scale(1.1);
+}
+main .promo-banners .promo-banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.15s ease-in;
 }
 main .promo-banners .promo-banner .promo-banner-content {
   display: flex;
@@ -787,13 +816,14 @@ main .promo-banners .promo-banner .promo-banner-content {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-  padding: 10px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 main .promo-banners .promo-banner .promo-banner-content h1 {
   font-size: 1.75rem;
-}
-main .promo-banners .promo-banner .promo-banner-content p {
-  font-size: 0.85rem;
 }
 main .promo-banners .promo-banner .promo-banner-content a {
   display: flex;
@@ -813,9 +843,6 @@ main .promo-banners .promo-banner .promo-banner-content a {
 }
 main .promo-banners .promo-banner .promo-banner-content a i {
   font-size: 0.85rem;
-}
-main .promo-banners .promo-banner img {
-  width: 100%;
 }
 main .newsletter {
   display: flex;
@@ -883,7 +910,7 @@ main .product-tags .tag i, main .product-tags .tag span {
   font-size: 0.85rem !important;
 }
 main .product-tags .tag-sale {
-  background-color: #E6007E;
+  background-color: #ff002b;
 }
 main .product-tags .tag-popular {
   background-color: #3520f5;
@@ -1446,7 +1473,7 @@ footer .footer-end .author-signature a span {
     width: 80%;
   }
   main {
-    padding-top: 160px !important;
+    padding-top: 100px !important;
   }
   main .hero .mobile-banner {
     display: none;
@@ -1460,21 +1487,6 @@ footer .footer-end .author-signature a span {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
-  }
-  main .promo-banners .promo-banner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    height: 250px;
-  }
-  main .promo-banners .promo-banner img {
-    height: 100%;
-    padding: 10px;
-    width: 50%;
-    -o-object-fit: contain;
-       object-fit: contain;
   }
   footer {
     background-color: black;
@@ -1504,7 +1516,7 @@ footer .footer-end .author-signature a span {
     display: flex !important;
   }
   main {
-    padding-top: 100px;
+    padding-top: 160px !important;
   }
   main .products {
     height: 500px !important;
@@ -1529,18 +1541,6 @@ footer .footer-end .author-signature a span {
   }
   main .promo-banners {
     flex-direction: row !important;
-  }
-  main .promo-banners .promo-banner {
-    flex-direction: column !important;
-    height: 450px;
-    width: 50%;
-  }
-  main .promo-banners .promo-banner .promo-banner-content {
-    width: 100%;
-  }
-  main .promo-banners .promo-banner img {
-    height: 60% !important;
-    width: 100% !important;
   }
   main .newsletter {
     flex-direction: row !important;
