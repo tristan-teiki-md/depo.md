@@ -38,6 +38,8 @@ header {
   top: 0px;
   left: 0px;
   z-index: 1000;
+  position: fixed;
+  transition: top 0.35s ease-in;
 }
 header .container {
   padding: 0 20px !important;

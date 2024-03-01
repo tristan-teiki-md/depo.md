@@ -53,3 +53,19 @@ function disableScroll(disable) {
     window.scrollTo(0, parseInt(document.body.dataset.scrollY || '0', 10));
   }
 }
+
+// Header hide and show on scroll
+let lastScrollTop = 0;
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  console.log(currentScroll)
+
+  if (currentScroll >= 200 && currentScroll > lastScrollTop) {
+      header.style.top = "-170px";
+  } else {
+      header.style.top = "0px";
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
